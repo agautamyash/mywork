@@ -1,0 +1,24 @@
+<p>
+  books works!
+  
+
+  <button (click)="updatenameInBook()">Add  child To Parent</button>
+</p>
+
+
+
+<div *ngIf="shown;else notallow ">
+  Our secret is being happy
+  <div  style="color:red;" appParatag *ngFor="let ele of myarray">
+    {{ele}}
+    </div><br>
+</div>
+
+
+
+
+
+<ng-template #notallow>
+  <p>You are not allowed to see our secret</p>
+</ng-template>
+canbenull:{{canbenull}}

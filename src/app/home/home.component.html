@@ -1,0 +1,16 @@
+<section class="todoapp">
+  <header class="header">
+    <h1>Home</h1>
+  </header>
+
+
+  <form (ngSubmit)="submit($event)">
+    <input type="text" name="name" />
+    <button type="submit">Show hero name</button>
+  </form>
+  {{mynameparent}}
+
+<app-books [mynamechild]="mynameparent"   (change)="updateFromChild($event)"></app-books>
+  
+
+</section>

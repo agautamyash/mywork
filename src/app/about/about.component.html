@@ -1,0 +1,73 @@
+<section class="todoapp">
+ <header class="header">
+    <h1>About</h1>
+    <input class="new-todo" placeholder="What needs to be done?" autofocus="" [(ngModel)]="newTodo.title" (keyup.enter)="addTodo()">
+  </header>
+{{newTodo.title}}
+
+  <section class="main" *ngIf="todos.length > 0">
+    <ul class="todo-list">
+      <li *ngFor="let todo of todos" [class.completed]="todo.complete">
+        <div class="view">
+          <input class="toggle" type="checkbox" (click)="toggleTodoComplete(todo)" [checked]="todo.complete">
+          <label>{{todo.title}}</label>
+          <button class="destroy" (click)="removeTodo(todo)"></button>
+        </div>
+      </li>
+    </ul>
+  </section>
+
+
+
+
+   <input [value]="exampleProperty"  (input)="exampleProperty = $event.target.value" >
+
+ <br>  {{exampleProperty}}
+<button (click)="exampleProperty=''"><B>CLEAR</B></button> <br>
+
+
+
+  <footer class="footer" *ngIf="todos.length > 0">
+    <span class="todo-count"><strong>{{todos.length}}</strong> {{todos.length == 1 ? 'item' : 'items'}} left</span>
+  </footer>
+
+
+<br>
+<div class="{{customclass}}"> is the <i>interpolated</i> image. </div>
+<div [ngClass]="customclass"> is the <i>property bound</i> image. </div>
+
+
+<div [ngSwitch]="newTodo.title">
+  <div    *ngSwitchCase="'happy'" >happy -)</div>
+  <div      *ngSwitchCase="'sad'"  >sad --- </div>
+  <div *ngSwitchCase="'confused'">confused ****</div>
+  <div  *ngSwitchDefault >nutral----------</div>
+</div>
+
+
+{{title}}
+
+  <h2>My favorite hero is: {{myfavroute.name}}</h2>
+  <p>Heroes:</p>
+  <ul>
+    <li *ngFor="let hero of herolist">
+      {{ hero.name }}   has   {{ hero.age }} Year old.
+      </li>
+  </ul>
+  <p *ngIf="herolist.length > 0">There are many heroes!</p>
+
+
+
+<h2>My favorite hero is: {{myHero.name}}</h2>
+  <p>Heroes:</p>
+  <ul>
+    <li *ngFor="let hero of heroes">
+      {{ hero.name }}
+      </li>
+  </ul>
+
+
+<h2>User list form django</h2>
+ <p *ngFor="let item of users">{{item.title}}</p>
+</section>
+
